@@ -25,4 +25,4 @@ jobs:
         fi
         git push -f -u origin upm
       env:
-        PKG_ROOT: Packages/PACKAGE_NAME
+        PKG_ROOT: Packages/com.starasgames.tmpro-dynamic-data-cleaner
