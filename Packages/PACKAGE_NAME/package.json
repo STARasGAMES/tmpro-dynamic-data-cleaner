@@ -1,0 +1,23 @@
+{
+  "name": "com.company-name.package-name",
+  "version": "0.0.1",
+  "displayName": "Pretty package name",
+  "description": "Your package description.",
+  "unity": "2019.4",
+  "unityRelease": "8f1",
+  "keywords": [
+    "tool"
+  ],
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "samples": [
+    {
+      "displayName": "Sample name",
+      "description": "Sample description.",
+      "path": "Samples~/SampleFolderName"
+    }
+  ]
+}
