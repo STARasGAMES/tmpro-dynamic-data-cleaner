@@ -24,4 +24,4 @@ Source of template: https://medium.com/openupm/how-to-maintain-upm-package-part-
 ## Installation
 Install via git url by adding this entry in your **manifest.json**
 
-`"$package-name$": "https://github.com/$GitHubUsername$/$RepositoryName$.git#upm"`
+`"com.starasgames.tmpro-dynamic-data-cleaner": "https://github.com/STARasGAMES/tmpro-dynamic-data-cleaner.git#upm"`
