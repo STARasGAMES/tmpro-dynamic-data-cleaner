@@ -18,16 +18,16 @@ namespace TMProDynamicDataCleaner.Editor
     {
         static string[] OnWillSaveAssets(string[] paths)
         {
-            try
+            foreach (string path in paths)
             {
-                foreach (string path in paths)
+                try
                 {
                     var assetType = AssetDatabase.GetMainAssetTypeAtPath(path);
-                    
+
                     // GetMainAssetTypeAtPath() sometimes returns null, for example, when path leads to .meta file
                     if (assetType == null)
                         continue;
-                    
+
                     // TMP_FontAsset is not marked as sealed class, so also checking for subclasses just in case
                     if (assetType != typeof(TMP_FontAsset) && assetType.IsSubclassOf(typeof(TMP_FontAsset)) == false)
                         continue;
@@ -45,11 +45,11 @@ namespace TMProDynamicDataCleaner.Editor
                     // Debug.Log("Clearing font asset data at " + path);
                     fontAsset.ClearFontAssetData(setAtlasSizeToZero: true);
                 }
-            }
-            catch (Exception e)
-            {
-                Debug.LogException(e);
-                Debug.LogError("Something went wrong while clearing dynamic font data. For more info look at log message above.");
+                catch (Exception e)
+                {
+                    Debug.LogException(e);
+                    Debug.LogError($"Something went wrong while clearing dynamic font data. For more info look at previous log message. Font asset path: '{path}'");
+                }
             }
 
             return paths;
