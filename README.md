@@ -14,7 +14,10 @@ Some performance improvements and additional checks were made for edge cases.<br
 Also, I created a test to quickly test whether script is working properly in your project/unity version.<br>
 
 ## Installation
-Install via git url or by adding new entry in your **`manifest.json`**.
+Install via git URL:
+`https://github.com/STARasGAMES/tmpro-dynamic-data-cleaner.git#upm`
+
+Or by adding a new entry in your **`manifest.json`**.
 ```json
 {
   "dependencies": {
