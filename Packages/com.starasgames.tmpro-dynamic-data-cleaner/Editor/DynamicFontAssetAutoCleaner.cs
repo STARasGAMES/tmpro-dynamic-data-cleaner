@@ -39,7 +39,7 @@ namespace TMProDynamicDataCleaner.Editor
                     if (fontAsset == null)
                         continue;
 
-                    if (fontAsset.atlasPopulationMode != AtlasPopulationMode.Dynamic)
+                    if (fontAsset.atlasPopulationMode != AtlasPopulationMode.Dynamic && fontAsset.atlasPopulationMode != AtlasPopulationMode.DynamicOS)
                         continue;
 
                     // Debug.Log("Clearing font asset data at " + path);
