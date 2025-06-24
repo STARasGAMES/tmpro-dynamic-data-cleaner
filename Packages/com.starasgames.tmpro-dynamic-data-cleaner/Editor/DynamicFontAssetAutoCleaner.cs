@@ -39,9 +39,15 @@ namespace TMProDynamicDataCleaner.Editor
                     if (fontAsset == null)
                         continue;
 
-                    if (fontAsset.atlasPopulationMode != AtlasPopulationMode.Dynamic && fontAsset.atlasPopulationMode != AtlasPopulationMode.DynamicOS)
-                        continue;
+#if UNITY_2022_1_OR_NEWER
+                    bool isDynamic = fontAsset.atlasPopulationMode is AtlasPopulationMode.Dynamic or AtlasPopulationMode.DynamicOS;
+#else
+                    bool isDynamic = fontAsset.atlasPopulationMode is AtlasPopulationMode.Dynamic;
+#endif
 
+                    if (!isDynamic)
+                        continue;
+                        
                     // Debug.Log("Clearing font asset data at " + path);
                     fontAsset.ClearFontAssetData(setAtlasSizeToZero: true);
                 }
